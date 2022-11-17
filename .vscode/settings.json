@@ -1,0 +1,27 @@
+{
+
+  "peacock.color": "#886",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#a0a081",
+    "activityBar.activeBorder": "#ff009b",
+    "activityBar.background": "#a0a081",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#cfefef",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#a0a081",
+    "statusBar.background": "#888866",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#6b6b50",
+    "statusBarItem.remoteBackground": "#888866",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#888866",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#88886699",
+    "titleBar.inactiveForeground": "#15202b99",
+    "commandCenter.border": "#15202b99"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
+}
