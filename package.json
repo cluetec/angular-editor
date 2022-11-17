@@ -1,6 +1,6 @@
 {
-  "name": "@kolkov/angular-editor",
-  "version": "3.0.0-beta.0",
+  "name": "@cluetec/angular-editor",
+  "version": "0.0.0-beta.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

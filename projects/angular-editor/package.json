@@ -1,13 +1,13 @@
 {
-  "name": "@kolkov/angular-editor",
-  "version": "3.0.0-beta.0",
+  "name": "@cluetec/angular-editor",
+  "version": "0.0.0-beta.1",
   "description": "A simple native WYSIWYG editor for Angular 8+, 13+. Rich Text editor component for Angular.",
-  "author": "Andrey Kolkov <a.kolkov@gmail.com>",
-  "repository": "https://github.com/kolkov/angular-editor",
+  "author": "Michael Niedermaier <mn@cluetec.de>",
+  "repository": "https://github.com/cluetec/angular-editor",
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://github.com/kolkov/angular-editor/issues"
+    "url": "https://github.com/cluetec/angular-editor/issues"
   },
   "peerDependencies": {
     "@angular/common": ">=13",
