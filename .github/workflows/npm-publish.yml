@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
+      - run: npm init --scope=@cluetec
       - run: npm ci
       - run: npm run build-prod:lib
       - run: echo "//https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
