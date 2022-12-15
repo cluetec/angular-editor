@@ -1,6 +1,5 @@
 {
   "name": "@cluetec/angular-editor",
-  "version": "0.0.0-beta.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +8,7 @@
     "test": "ng test",
     "lint:lib": "ng lint angular-editor",
     "e2e": "ng e2e",
-    "build-watch:lib": "ng build angular-editor --watch",
+    "watch": "ng build angular-editor --watch",
     "test:lib": "ng test angular-editor",
     "build:lib": "ng-packagr -p projects/angular-editor/ng-package.json",
     "build-prod:lib": "ng-packagr -p projects/angular-editor/ng-package.json -c projects/angular-editor/tsconfig.lib.prod.json",
@@ -17,7 +16,8 @@
     "copy:readme": "cpx README.md dist/angular-editor",
     "copy:changelog": "cpx CHANGELOG.md dist/angular-editor",
     "copy:license": "cpx LICENSE dist/angular-editor",
-    "test-ci": "ng test angular-editor --code-coverage --no-watch --browsers=ChromeHeadless && cat ./coverage/angular-editor/lcov.info | coveralls"
+    "test-ci": "ng test angular-editor --code-coverage --no-watch --browsers=ChromeHeadless && cat ./coverage/angular-editor/lcov.info | coveralls",
+    "provide:link": "cd dist/angular-editor && npm link"
   },
   "private": true,
   "dependencies": {
