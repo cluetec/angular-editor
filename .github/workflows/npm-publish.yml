@@ -1,7 +1,5 @@
 name: Publish Package to npmjs
 on:
-  push:    
-    branches: [ "main" ]
   release:
     types: [created]
 jobs:
@@ -16,7 +14,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run build-prod:lib
-      - run: echo "//https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - run: npm publish --access public ./dist/angular-editor/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
