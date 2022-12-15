@@ -1,6 +1,6 @@
 {
   "name": "@cluetec/angular-editor",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple native WYSIWYG editor for Angular 14+. Rich Text editor component for Angular.",
   "author": "Michael Niedermaier <mn@cluetec.de>",
   "repository": "https://github.com/cluetec/angular-editor",
