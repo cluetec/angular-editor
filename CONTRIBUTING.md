@@ -1,8 +1,7 @@
-
 # Report an Issue
 
 Help us make AngularEditor better! If you think you might have found a bug, or some other weirdness, start by making sure
-it hasn't already been reported. You can [search through existing @kolkov/angular-editor issues](https://github.com/kolkov/angular-editor/issues)
+it hasn't already been reported. You can [search through existing @cluetec/angular-editor issues](https://github.com/kolkov/angular-editor/issues)
 to see if someone's reported one similar to yours.
 
 If not, then [create a plunkr](http://bit.ly/UIR-Plunk) that demonstrates the problem (try to use as little code
@@ -14,13 +13,12 @@ that plunkr you created!
 
 **Note**: If you're unsure how a feature is used, or are encountering some unexpected behavior that you aren't sure
 is a bug, it's best to talk it out on
-[StackOverflow](http://stackoverflow.com/questions/ask?tags=angular,@kolkov/angular-editor) before reporting it. This
+[StackOverflow](http://stackoverflow.com/questions/ask?tags=angular,@cluetec/angular-editor) before reporting it. This
 keeps development streamlined, and helps us focus on building great software.
 
-
-Issues only! |
--------------|
-Please keep in mind that the issue tracker is for *issues*. Please do *not* post an issue if you need help or support. Instead, use StackOverflow. |
+| Issues only!                                                                                                                                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Please keep in mind that the issue tracker is for _issues_. Please do _not_ post an issue if you need help or support. Instead, use StackOverflow. |
 
 # Contribute
 
@@ -32,12 +30,10 @@ Please keep in mind that the issue tracker is for *issues*. Please do *not* post
 
 **(4)** Finally, commit some code and open a pull request. Code & commits should abide by the following rules:
 
-- *Always* have test coverage for new features (or regression tests for bug fixes), and *never* break existing tests
+- _Always_ have test coverage for new features (or regression tests for bug fixes), and _never_ break existing tests
 - Commits should represent one logical change each; if a feature goes through multiple iterations, squash your commits down to one
 - Make sure to follow the [Angular commit message format](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format) so your change will appear in the changelog of the next release.
 - Changes should always respect the coding style of the project
-
-
 
 # Developing
 
@@ -47,7 +43,7 @@ Please keep in mind that the issue tracker is for *issues*. Please do *not* post
 
 The code for `angular-editor` is :
 
-* [AngularEditor](https://github.com/kolkov/angular-editor) (`@kolkov/angular-editor` on npm)
+- [AngularEditor](https://github.com/kolkov/angular-editor) (`@cluetec/angular-editor` on npm)
 
 Clone repository.
 
@@ -66,10 +62,10 @@ cd angular-editor
 npm install
 ```
 
-After executing these steps, your local copy of `@kolkov/angular-editor-app` will be built using your local copy of `@kolkov/angular-editor`
+After executing these steps, your local copy of `@cluetec/angular-editor-app` will be built using your local copy of `@cluetec/angular-editor`
 instead of the prebuilt version specified in `package.json`.
 
 ## Develop
 
-* `npm run build and watch angular-editor`: Continuously builds the `@kolkov/angular-editor` code when sources change.
-* `npm run start`: Continuously builds and runs Demo app when source or tests change.
+- `npm run build and watch angular-editor`: Continuously builds the `@cluetec/angular-editor` code when sources change.
+- `npm run start`: Continuously builds and runs Demo app when source or tests change.
