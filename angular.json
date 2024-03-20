@@ -73,9 +73,7 @@
                 "output": "assets/fonts/"
               }
             ],
-            "styles": [
-              "projects/angular-editor-app/src/styles.scss"
-            ],
+            "styles": ["projects/angular-editor-app/src/styles.scss"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -141,9 +139,7 @@
               "projects/angular-editor-app/src/favicon.ico",
               "projects/angular-editor-app/src/assets"
             ],
-            "styles": [
-              "projects/angular-editor-app/src/styles.css"
-            ],
+            "styles": ["projects/angular-editor-app/src/styles.css"],
             "scripts": []
           }
         },
@@ -173,8 +169,6 @@
   },
   "cli": {
     "analytics": "fbddda2f-258b-4004-8062-d701809d0a1c",
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

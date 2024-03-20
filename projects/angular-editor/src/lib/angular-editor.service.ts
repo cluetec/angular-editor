@@ -1,8 +1,8 @@
-import {Inject, Injectable} from '@angular/core';
-import {HttpClient, HttpEvent} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {DOCUMENT} from '@angular/common';
-import {CustomClass} from './config';
+import { DOCUMENT } from "@angular/common";
+import { HttpClient, HttpEvent } from "@angular/common/http";
+import { Inject, Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { CustomClass } from "./config";
 
 export interface UploadResponse {
   imageUrl: string;
@@ -10,16 +10,12 @@ export interface UploadResponse {
 
 @Injectable()
 export class AngularEditorService {
-
   savedSelection: Range | null;
   selectedText: string;
   uploadUrl: string;
   uploadWithCredentials: boolean;
 
-  constructor(
-    private http: HttpClient,
-    @Inject(DOCUMENT) private doc: any
-  ) { }
+  constructor(private http: HttpClient, @Inject(DOCUMENT) private doc: any) {}
 
   /**
    * Executed command from editor header buttons exclude toggleEditorMode
@@ -27,9 +23,9 @@ export class AngularEditorService {
    * @param value
    */
   executeCommand(command: string, value?: string) {
-    const commands = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre'];
+    const commands = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "pre"];
     if (commands.includes(command)) {
-      this.doc.execCommand('formatBlock', false, command);
+      this.doc.execCommand("formatBlock", false, command);
       return;
     }
     this.doc.execCommand(command, false, value);
@@ -40,10 +36,11 @@ export class AngularEditorService {
    * @param url string from UI prompt
    */
   createLink(url: string) {
-    if (!url.includes('http')) {
-      this.doc.execCommand('createlink', false, url);
+    if (!url.includes("http")) {
+      this.doc.execCommand("createlink", false, url);
     } else {
-      const newUrl = '<a href="' + url + '" target="_blank">' + this.selectedText + '</a>';
+      const newUrl =
+        '<a href="' + url + '" target="_blank">' + this.selectedText + "</a>";
       this.insertHtml(newUrl);
     }
   }
@@ -57,10 +54,10 @@ export class AngularEditorService {
   insertColor(color: string, where: string): void {
     const restored = this.restoreSelection();
     if (restored) {
-      if (where === 'textColor') {
-        this.doc.execCommand('foreColor', false, color);
+      if (where === "textColor") {
+        this.doc.execCommand("foreColor", false, color);
       } else {
-        this.doc.execCommand('hiliteColor', false, color);
+        this.doc.execCommand("hiliteColor", false, color);
       }
     }
   }
@@ -70,7 +67,7 @@ export class AngularEditorService {
    * @param fontName string
    */
   setFontName(fontName: string) {
-    this.doc.execCommand('fontName', false, fontName);
+    this.doc.execCommand("fontName", false, fontName);
   }
 
   /**
@@ -78,7 +75,7 @@ export class AngularEditorService {
    * @param fontSize string
    */
   setFontSize(fontSize: string) {
-    this.doc.execCommand('fontSize', false, fontSize);
+    this.doc.execCommand("fontSize", false, fontSize);
   }
 
   /**
@@ -86,11 +83,10 @@ export class AngularEditorService {
    * @param html HTML string
    */
   insertHtml(html: string): void {
-
-    const isHTMLInserted = this.doc.execCommand('insertHTML', false, html);
+    const isHTMLInserted = this.doc.execCommand("insertHTML", false, html);
 
     if (!isHTMLInserted) {
-      throw new Error('Unable to perform the operation');
+      throw new Error("Unable to perform the operation");
     }
   }
 
@@ -109,7 +105,7 @@ export class AngularEditorService {
     } else {
       this.savedSelection = null;
     }
-  }
+  };
 
   /**
    * restore selection when the editor is focused in
@@ -135,17 +131,19 @@ export class AngularEditorService {
   /**
    * setTimeout used for execute 'saveSelection' method in next event loop iteration
    */
-  public executeInNextQueueIteration(callbackFn: (...args: any[]) => any, timeout = 1e2): void {
+  public executeInNextQueueIteration(
+    callbackFn: (...args: any[]) => any,
+    timeout = 1e2
+  ): void {
     setTimeout(callbackFn, timeout);
   }
 
   /** check any selection is made or not */
   private checkSelection(): any {
-
     const selectedText = this.savedSelection.toString();
 
     if (selectedText.length === 0) {
-      throw new Error('No Selection Made');
+      throw new Error("No Selection Made");
     }
     return true;
   }
@@ -155,14 +153,13 @@ export class AngularEditorService {
    * @param file The file
    */
   uploadImage(file: File): Observable<HttpEvent<UploadResponse>> {
-
     const uploadData: FormData = new FormData();
 
-    uploadData.append('file', file, file.name);
+    uploadData.append("file", file, file.name);
 
     return this.http.post<UploadResponse>(this.uploadUrl, uploadData, {
       reportProgress: true,
-      observe: 'events',
+      observe: "events",
       withCredentials: this.uploadWithCredentials,
     });
   }
@@ -172,33 +169,42 @@ export class AngularEditorService {
    * @param imageUrl The imageUrl.
    */
   insertImage(imageUrl: string) {
-    this.doc.execCommand('insertImage', false, imageUrl);
+    this.doc.execCommand("insertImage", false, imageUrl);
   }
 
   setDefaultParagraphSeparator(separator: string) {
-    this.doc.execCommand('defaultParagraphSeparator', false, separator);
+    this.doc.execCommand("defaultParagraphSeparator", false, separator);
   }
 
   createCustomClass(customClass: CustomClass) {
     let newTag = this.selectedText;
     if (customClass) {
-      const tagName = customClass.tag ? customClass.tag : 'span';
-      newTag = '<' + tagName + ' class="' + customClass.class + '">' + this.selectedText + '</' + tagName + '>';
+      const tagName = customClass.tag ? customClass.tag : "span";
+      newTag =
+        "<" +
+        tagName +
+        ' class="' +
+        customClass.class +
+        '">' +
+        this.selectedText +
+        "</" +
+        tagName +
+        ">";
     }
     this.insertHtml(newTag);
   }
 
   insertVideo(videoUrl: string) {
-    if (videoUrl.match('www.youtube.com')) {
+    if (videoUrl.match("www.youtube.com")) {
       this.insertYouTubeVideoTag(videoUrl);
     }
-    if (videoUrl.match('vimeo.com')) {
+    if (videoUrl.match("vimeo.com")) {
       this.insertVimeoVideoTag(videoUrl);
     }
   }
 
   private insertYouTubeVideoTag(videoUrl: string): void {
-    const id = videoUrl.split('v=')[1];
+    const id = videoUrl.split("v=")[1];
     const imageUrl = `https://img.youtube.com/vi/${id}/0.jpg`;
     const thumbnail = `
       <div style='position: relative'>
@@ -212,16 +218,18 @@ export class AngularEditorService {
   }
 
   private insertVimeoVideoTag(videoUrl: string): void {
-    const sub = this.http.get<any>(`https://vimeo.com/api/oembed.json?url=${videoUrl}`).subscribe(data => {
-      const imageUrl = data.thumbnail_url_with_play_button;
-      const thumbnail = `<div>
+    const sub = this.http
+      .get<any>(`https://vimeo.com/api/oembed.json?url=${videoUrl}`)
+      .subscribe((data) => {
+        const imageUrl = data.thumbnail_url_with_play_button;
+        const thumbnail = `<div>
         <a href='${videoUrl}' target='_blank'>
           <img src="${imageUrl}" alt="${data.title}"/>
         </a>
       </div>`;
-      this.insertHtml(thumbnail);
-      sub.unsubscribe();
-    });
+        this.insertHtml(thumbnail);
+        sub.unsubscribe();
+      });
   }
 
   nextNode(node) {
@@ -249,7 +257,7 @@ export class AngularEditorService {
     } else {
       // Iterate nodes until we hit the end container
       while (node && node !== endNode) {
-        rangeNodes.push( node = this.nextNode(node) );
+        rangeNodes.push((node = this.nextNode(node)));
       }
 
       // Add partially selected nodes at the start of the range
@@ -277,7 +285,10 @@ export class AngularEditorService {
     if (this.doc.getSelection) {
       const sel = this.doc.getSelection();
       for (let i = 0, len = sel.rangeCount; i < len; ++i) {
-        nodes.push.apply(nodes, this.getRangeSelectedNodes(sel.getRangeAt(i), true));
+        nodes.push.apply(
+          nodes,
+          this.getRangeSelectedNodes(sel.getRangeAt(i), true)
+        );
       }
     }
     return nodes;
@@ -292,10 +303,12 @@ export class AngularEditorService {
   }
 
   removeSelectedElements(tagNames) {
-    const tagNamesArray = tagNames.toLowerCase().split(',');
+    const tagNamesArray = tagNames.toLowerCase().split(",");
     this.getSelectedNodes().forEach((node) => {
-      if (node.nodeType === 1 &&
-        tagNamesArray.indexOf(node.tagName.toLowerCase()) > -1) {
+      if (
+        node.nodeType === 1 &&
+        tagNamesArray.indexOf(node.tagName.toLowerCase()) > -1
+      ) {
         // Remove the node and replace it with its children
         this.replaceWithOwnChildren(node);
       }

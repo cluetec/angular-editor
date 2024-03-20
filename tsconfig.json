@@ -10,20 +10,11 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2020", "dom"],
     "paths": {
-      "angular-editor": [
-        "dist/angular-editor"
-      ],
-      "angular-editor/*": [
-        "dist/angular-editor/*"
-      ]
+      "angular-editor": ["dist/angular-editor"],
+      "angular-editor/*": ["dist/angular-editor/*"]
     }
   }
 }

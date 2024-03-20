@@ -57,34 +57,19 @@ import { AngularEditorModule } from '@cluetec/angular-editor';
 Then in HTML
 
 ```html
-<angular-editor
-  [placeholder]="'Enter text here...'"
-  [(ngModel)]="htmlContent"
-></angular-editor>
+<angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
 ```
 
 or for usage with reactive forms
 
 ```html
-<angular-editor
-  formControlName="htmlContent"
-  [config]="editorConfig"
-></angular-editor>
+<angular-editor formControlName="htmlContent" [config]="editorConfig"></angular-editor>
 ```
 
 if you using more than one editor on same page set `id` property
 
 ```html
-<angular-editor
-  id="editor1"
-  formControlName="htmlContent1"
-  [config]="editorConfig"
-></angular-editor>
-<angular-editor
-  id="editor2"
-  formControlName="htmlContent2"
-  [config]="editorConfig"
-></angular-editor>
+<angular-editor id="editor1" formControlName="htmlContent1" [config]="editorConfig"></angular-editor> <angular-editor id="editor2" formControlName="htmlContent2" [config]="editorConfig"></angular-editor>
 ```
 
 where
@@ -159,19 +144,10 @@ You can define your custom buttons with custom actions using executeCommandFn. I
 The first argument of this method is aCommandName and the second argument is aValueArgument. Example shows a button that adds Angular editor logo into the editor.
 
 ```html
-<angular-editor
-  id="editor1"
-  formControlName="htmlContent1"
-  [config]="editorConfig"
->
+<angular-editor id="editor1" formControlName="htmlContent1" [config]="editorConfig">
   <ng-template #customButtons let-executeCommandFn="executeCommandFn">
     <ae-toolbar-set>
-      <ae-button
-        iconClass="fa fa-html5"
-        title="Angular editor logo"
-        (buttonClick)="executeCommandFn('insertHtml', angularEditorLogo)"
-      >
-      </ae-button>
+      <ae-button iconClass="fa fa-html5" title="Angular editor logo" (buttonClick)="executeCommandFn('insertHtml', angularEditorLogo)"> </ae-button>
     </ae-toolbar-set>
   </ng-template>
 </angular-editor>
@@ -239,39 +215,8 @@ The first argument of this method is aCommandName and the second argument is aVa
 
 ```js
 toolbarHiddenButtons: [
-  [
-    "undo",
-    "redo",
-    "bold",
-    "italic",
-    "underline",
-    "strikeThrough",
-    "subscript",
-    "superscript",
-    "justifyLeft",
-    "justifyCenter",
-    "justifyRight",
-    "justifyFull",
-    "indent",
-    "outdent",
-    "insertUnorderedList",
-    "insertOrderedList",
-    "heading",
-    "fontName",
-  ],
-  [
-    "fontSize",
-    "textColor",
-    "backgroundColor",
-    "customClasses",
-    "link",
-    "unlink",
-    "insertImage",
-    "insertVideo",
-    "insertHorizontalRule",
-    "removeFormat",
-    "toggleEditorMode",
-  ],
+  ["undo", "redo", "bold", "italic", "underline", "strikeThrough", "subscript", "superscript", "justifyLeft", "justifyCenter", "justifyRight", "justifyFull", "indent", "outdent", "insertUnorderedList", "insertOrderedList", "heading", "fontName"],
+  ["fontSize", "textColor", "backgroundColor", "customClasses", "link", "unlink", "insertImage", "insertVideo", "insertHorizontalRule", "removeFormat", "toggleEditorMode"],
 ];
 ```
 

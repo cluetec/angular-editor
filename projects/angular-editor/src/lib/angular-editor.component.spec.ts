@@ -1,22 +1,24 @@
-import {async, ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
-import {AngularEditorComponent} from './angular-editor.component';
-import {AngularEditorToolbarComponent} from './angular-editor-toolbar.component';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {AeSelectComponent} from './ae-select/ae-select.component';
-import {AngularEditorModule} from './angular-editor.module';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { AeSelectComponent } from "./ae-select/ae-select.component";
+import { AngularEditorToolbarComponent } from "./angular-editor-toolbar.component";
+import { AngularEditorComponent } from "./angular-editor.component";
 
-describe('AngularEditorComponent', () => {
+describe("AngularEditorComponent", () => {
   let component: AngularEditorComponent;
   let fixture: ComponentFixture<AngularEditorComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, HttpClientModule],
-      declarations: [AngularEditorComponent, AngularEditorToolbarComponent, AeSelectComponent]
-    })
-      .compileComponents();
+      imports: [FormsModule, HttpClientModule],
+      declarations: [
+        AngularEditorComponent,
+        AngularEditorToolbarComponent,
+        AeSelectComponent,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -25,13 +27,13 @@ describe('AngularEditorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it('should paste raw text', () => {
-    const htmlText = '<h1>Hello!</h1>';
-    const rawText = 'Hello!';
+  it("should paste raw text", () => {
+    const htmlText = "<h1>Hello!</h1>";
+    const rawText = "Hello!";
     component.config.rawPaste = true;
 
     const dataTransfer = new DataTransfer();

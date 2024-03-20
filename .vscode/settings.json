@@ -1,5 +1,4 @@
 {
-
   "peacock.color": "#886",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#a0a081",
@@ -22,6 +21,6 @@
     "commandCenter.border": "#15202b99"
   },
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": "explicit"
   }
 }

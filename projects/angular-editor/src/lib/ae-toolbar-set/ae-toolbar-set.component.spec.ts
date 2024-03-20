@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AeToolbarSetComponent } from './ae-toolbar-set.component';
+import { AeToolbarSetComponent } from "./ae-toolbar-set.component";
 
-describe('AeToolbarSetComponent', () => {
+describe("AeToolbarSetComponent", () => {
   let component: AeToolbarSetComponent;
   let fixture: ComponentFixture<AeToolbarSetComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AeToolbarSetComponent ]
-    })
-    .compileComponents();
+      declarations: [AeToolbarSetComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('AeToolbarSetComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AeButtonComponent } from './ae-button.component';
+import { AeButtonComponent } from "./ae-button.component";
 
-describe('AeButtonComponent', () => {
+describe("AeButtonComponent", () => {
   let component: AeButtonComponent;
   let fixture: ComponentFixture<AeButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AeButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [AeButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('AeButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
